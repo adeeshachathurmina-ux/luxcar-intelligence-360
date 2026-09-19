@@ -1,0 +1,301 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #06080e;
+    --bg-secondary: #0a0e18;
+    --card-bg: rgba(14, 20, 32, 0.72);
+    --border-color: rgba(255, 255, 255, 0.09);
+    --text-primary: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent-blue: #3b82f6;
+    --accent-cyan: #06b6d4;
+    --accent-gold: #f59e0b;
+    --accent-emerald: #10b981;
+    --cursor-x: 50%;
+    --cursor-y: 50%;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Plus Jakarta Sans", "Segoe UI", Roboto, sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Dynamic Interactive Mouse-Following Spotlight */
+.mouse-spotlight {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(
+    650px circle at var(--mouse-x, 50vw) var(--mouse-y, 40vh),
+    rgba(59, 130, 246, 0.12),
+    rgba(6, 182, 212, 0.05) 30%,
+    transparent 70%
+  );
+  transition: background 0.05s ease-out;
+}
+
+/* Custom Luxury Glassmorphism & UI Utilities */
+.glass-panel {
+  background: rgba(12, 17, 28, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+}
+
+.glass-card {
+  background: rgba(15, 22, 36, 0.65);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 20px 45px -15px rgba(37, 99, 235, 0.25), 0 0 20px rgba(59, 130, 246, 0.15) inset;
+  transform: translateY(-3px);
+}
+
+/* 3D Perspective & Tilt Effects */
+.perspective-container {
+  perspective: 1200px;
+}
+
+.card-3d {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.15s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.2s ease;
+}
+
+.card-3d-content {
+  transform: translateZ(30px);
+}
+
+.card-3d-shine {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at var(--card-mouse-x, 50%) var(--card-mouse-y, 50%),
+    rgba(255, 255, 255, 0.12) 0%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-3d:hover .card-3d-shine {
+  opacity: 1;
+}
+
+.glow-sapphire {
+  box-shadow: 0 0 40px -5px rgba(59, 130, 246, 0.35);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 40px -5px rgba(6, 182, 212, 0.35);
+}
+
+.glow-gold {
+  box-shadow: 0 0 40px -5px rgba(245, 158, 11, 0.35);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 40px -5px rgba(16, 185, 129, 0.35);
+}
+
+/* Ambient background multi-layer lights */
+.ambient-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 10% 12%, rgba(37, 99, 235, 0.14) 0%, transparent 45%),
+    radial-gradient(circle at 90% 18%, rgba(245, 158, 11, 0.09) 0%, transparent 40%),
+    radial-gradient(circle at 50% 90%, rgba(6, 182, 212, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.07) 0%, transparent 45%);
+}
+
+/* Grid overlay background texture for technical automotive feel */
+.bg-grid-tech {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+/* Animated Pulse Badge */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.96);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes shimmerSweep {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+.animate-float-gentle {
+  animation: floatGentle 4s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.btn-shimmer {
+  background-size: 200% auto;
+  transition: all 0.3s ease;
+}
+
+.btn-shimmer:hover {
+  background-position: right center;
+}
+
+/* Custom Range Slider */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.08);
+  height: 7px;
+  border-radius: 9999px;
+  outline: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  border: 2px solid #ffffff;
+  cursor: pointer;
+  box-shadow: 0 0 14px rgba(59, 130, 246, 0.9);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.25);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #06080e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.6);
+}
+
+/* Print / PDF Export Optimization */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+
+  .ambient-glow,
+  .mouse-spotlight,
+  .no-print,
+  button,
+  header,
+  input[type="range"],
+  select {
+    display: none !important;
+  }
+
+  .glass-panel,
+  .glass-card {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: none !important;
+    color: #0f172a !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .text-white {
+    color: #0f172a !important;
+  }
+
+  .text-slate-400,
+  .text-slate-300 {
+    color: #475569 !important;
+  }
+
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+
+  th, td {
+    border-bottom: 1px solid #cbd5e1 !important;
+    color: #0f172a !important;
+  }
+}
