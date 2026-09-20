@@ -1,85 +1,104 @@
 # 🚗 LuxCar Intelligence 360
-### *Your Smart AI Car Buying Assistant & 5-Year Ownership Cost Predictor*
+### *AI-Powered Vehicle Match & 5-Year Ownership Cost Simulator*
 
-[![Next.js](https://img.shields.io/badge/Next.js-16%2B-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Website-luxcar--intelligence--360.vercel.app-0070f3?style=for-the-badge&logo=vercel&logoColor=white)](https://luxcar-intelligence-360.vercel.app/)
+[![Next.js](https://img.shields.io/badge/Next.js-16%2B_(React_19)-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115%2B-009688?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
-[![Python](https://img.shields.io/badge/Python-3.13%2B-3776ab?style=for-the-badge&logo=python)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.11%2B-3776ab?style=for-the-badge&logo=python)](https://www.python.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178c6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-Modern_Dark_UI-38bdf8?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
-[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+[![License](https://img.shields.io/badge/License-MIT-emerald?style=for-the-badge)](LICENSE)
+
+---
+
+## 🌐 Try It Live Right Now!
+No installation needed! Open the full-stack web application directly in your browser:
+👉 **[https://luxcar-intelligence-360.vercel.app/](https://luxcar-intelligence-360.vercel.app/)**
+
+*Works on all modern desktop and mobile browsers with instant 0ms calculation speed!*
 
 ---
 
 ## 💡 What is LuxCar Intelligence 360?
 
-Buying a vehicle is one of the biggest financial decisions most people make. Usually, people only look at two things: **the car's price today** and **how it looks**.
+When buying a car, most people make decisions based only on **the showroom price** and **the exterior look**. A few years later, they run into unexpected problems:
+* High fuel bills from daily traffic
+* Expensive spare parts and maintenance
+* Not enough seats when the family grows
+* Rapid loss of vehicle value when reselling
 
-**LuxCar Intelligence 360** changes that. It helps you answer two critical questions:
-1. **"Does this car fit my life today?"** (Your current budget, family size, and daily drive)
-2. **"Will it still fit me in 3 to 5 years, and what will it actually cost to own?"** (Growing family, rising fuel prices, maintenance, and resale value)
-
-It combines an easy-to-use modern web interface with smart algorithms to give you **honest, data-driven vehicle recommendations** tailored for markets like **Sri Lanka** and beyond.
-
----
-
-## ✨ Key Features Anyone Will Love
-
-### 1. 🎯 Smart Match (Now vs. 5 Years Later)
-Move simple sliders for your budget, family size, and daily commute. The system instantly scores over 40+ vehicles and shows you:
-* **Best Match for Today:** The most practical choice for right now.
-* **Smart Future Alternative:** A car that might save you more money or suit your lifestyle better in 3–5 years.
-
-### 2. 💰 5-Year Real Cost Calculator (TCO)
-A car's sticker price is only half the story. LuxCar calculates your **Total Cost of Ownership** over 5 years:
-* ⛽ Fuel expenses based on your daily travel
-* 🔧 Regular maintenance & servicing costs
-* 🛡️ Annual insurance
-* 📉 Vehicle depreciation (estimated resale value after 5 years)
-* 💱 Supports both **Sri Lankan Rupees (LKR Millions/Lakhs)** and **US Dollars (USD)**
-
-### 3. 🧠 Smart Vehicle Categories
-Using machine learning, cars are automatically grouped into 4 clear categories so you can quickly see where each vehicle fits:
-* 🟢 **Eco City Commuters** *(Suzuki Wagon R, Toyota Aqua, Vitz)* - Maximum fuel savings
-* 🔵 **Family Crossovers & Sedans** *(Toyota Premio, Honda Vezel, Raize)* - Balanced comfort & reliability
-* 🟣 **Luxury Highway Cruisers** *(BMW 3 Series, Mercedes C-Class, Audi A4)* - Premium drive & prestige
-* 🟡 **Prestige SUVs** *(Land Cruiser LC300, Defender 110, Porsche Cayenne)* - Ultimate power & space
-
-### 4. 💬 LuxAI Assistant (Sinhala, Singlish & English)
-Need advice? Chat directly with the built-in AI concierge in the language you are most comfortable with:
-> *"Mata 150 lacks walata aduwen thel wada karana 5 denekuta yanna puluwan SUV ekak kiyanna"*
-
-The AI extracts your budget, family needs, and priorities to give you instant, personalized advice.
-
-### 5. 🖼️ Real Vehicle Photos (No Fake Placeholders)
-Every car in the catalog features authentic, high-quality exterior photos automatically pulled from Wikimedia Commons.
-
-### 6. 🕹️ Bonus: Retro Highway Rush Game!
-Take a quick break and play **Highway Rush**—a retro 2D arcade driving game built directly into the app with authentic engine sound effects!
+**LuxCar Intelligence 360** solves this. It acts as your personal digital automotive consultant, answering two essential questions:
+1. **"Which car is my best match today?"** (Based on your budget, family size, and daily driving distance).
+2. **"What will this car actually cost me over 5 years, and what is my best alternative when my lifestyle expands?"**
 
 ---
 
-## 🛠️ Built With
+## ✨ Key Features (Simple & Clear)
 
-* **Frontend:** Next.js 16 (React 19), TypeScript, Tailwind CSS (Obsidian Luxury Dark Theme)
-* **Backend:** Python, FastAPI (Fast, lightweight asynchronous API)
-* **Data & Intelligence:** Scikit-Learn (Vehicle clustering), Pandas, NumPy
-* **AI & NLP:** Google Gemini AI + Offline Sinhala/Singlish rule parser
-* **Audio:** Web Audio API (Synthesized procedural sound effects)
+### 🎯 1. Smart Dual-Horizon Match (Today vs. 3–5 Years Later)
+Move simple sliders for your budget, family size, and daily commute. The system scans 40+ popular vehicles and highlights:
+* 🏆 **#1 Top Match for Today:** The most practical, comfortable, and affordable choice right now.
+* 👶 **Future-Proof Alternative:** A vehicle that fits your expanding family or longer travel needs 3 to 5 years down the road.
+* 🏎️ **Sporty Choice & 🛡️ Low-Maintenance Choice:** Immediate runner-up options for quick comparison.
+
+### 💰 2. 5-Year True Cost of Ownership (TCO)
+A car's purchase price is only part of what you spend. LuxCar calculates your **real financial bottom line**:
+* ⛽ **Fuel Expenses:** Calculated from your daily kilometers and the car’s actual km/L.
+* 🔧 **Routine Maintenance:** Scheduled servicing, oil, and filter replacements.
+* 🛡️ **Annual Insurance:** Realistic market insurance estimates.
+* 🔄 **Money Back (Resale Retention):** Estimated money you get back when you sell the vehicle after 5 years.
+* 🎯 **Effective Monthly Cost:** What the car actually costs you per month.
+
+### 🇱🇰 3. Calibrated for the Sri Lankan Market
+* Prices shown in **Sri Lankan Millions & Lakhs (LKR)** or **US Dollars (USD)**.
+* Realistic fuel rates (Octane 92 / Auto Diesel / CEB Electric tariffs).
+* Accurate Sri Lankan secondary market resale value retention tiers (Toyota/Suzuki vs. European luxury).
+
+### 💬 4. LuxAI Assistant (English, සිංහල & Singlish)
+Ask any automotive question in plain language:
+> *"I have 18M budget, daily 35km travel, need a hybrid SUV"*  
+> *"ලක්ෂ 150කට පවුලට හොඳ hybrid SUV එකක් කියන්න"*  
+> *"Mata thel wada karana hoda car ekak recommend karanna"*
+
+The AI understands your language, extracts your requirements, and suggests the top matching vehicles with exact prices and fuel economy figures.
+
+### ⚖️ 5. Side-by-Side Vehicle Comparison
+Compare any two cars head-to-head on match scores, seating capacity, horsepower, fuel efficiency, reliability ratings, and resale tiers.
+
+### 🎨 6. Luxury Glassmorphism Design
+* **5 Interactive Themes:** Midnight, Cyber Colombo, Golden Hour, Hyper Warp, and Futuristic HUD.
+* **3D Tilt Cards:** Interactive cards that respond to mouse movement.
+* **Interactive Sound FX:** Procedural sports engine rev audio effects.
+* **Bookmark & PDF Export:** Save your favorite car recommendations to browser storage or print clean PDF reports.
+
+### 🕹️ 7. Highway Rush Mini-Game
+Take a spin on the Southern Expressway! Enjoy a built-in retro arcade driving mini-game with retro sound effects directly in the app.
 
 ---
 
-## 🚀 How to Run the Project (Super Easy)
+## 🛠️ Technology Stack
 
-### ⚡ Method 1: One-Click Start (Windows)
-Simply double-click the **`run_project.bat`** file in the project folder.  
-It will automatically start both the backend and frontend, and open your browser!
+| Layer | Technologies Used |
+|---|---|
+| **Frontend UI** | Next.js 16, React 19, TypeScript, Tailwind CSS, Framer Motion |
+| **Backend API** | Python, FastAPI, Uvicorn (Asynchronous REST API) |
+| **Data Engine** | Pandas, NumPy, Scikit-Learn (Vehicle clustering & suitability models) |
+| **AI Consultant** | Intelligent Multi-Lingual NLP Engine + Optional Google Gemini AI |
+| **Hosting** | Vercel Global Edge Network (Frontend) + Standalone 0ms Client Fallback |
 
 ---
 
-### 💻 Method 2: Manual Start via Terminal
+## 🚀 How to Run Locally (Step-by-Step)
 
-#### Step 1: Start the Backend (Python)
-Open a terminal in the project folder:
+### ⚡ Method 1: 1-Click Start (Windows)
+Double-click the **`run_project.bat`** file in the root folder.  
+It automatically starts both the Python backend and Next.js frontend, and opens the application in your default browser.
+
+---
+
+### 💻 Method 2: Manual Terminal Start
+
+#### Step 1: Start the Python Backend
+Open a terminal in the project directory:
 ```powershell
 cd backend
 python -m venv venv
@@ -87,10 +106,10 @@ python -m venv venv
 pip install -r requirements.txt
 python -m uvicorn main:app --host 127.0.0.1 --port 8000 --reload
 ```
-* Backend will be live at: `http://127.0.0.1:8000`
-* API Documentation: `http://127.0.0.1:8000/docs`
+* Backend API: `http://127.0.0.1:8000`
+* Interactive API Documentation (Swagger): `http://127.0.0.1:8000/docs`
 
-#### Step 2: Start the Frontend (Next.js)
+#### Step 2: Start the Next.js Frontend
 Open a second terminal window:
 ```powershell
 cd frontend
@@ -101,33 +120,49 @@ npm run dev -- -p 3000
 
 ---
 
-## 📂 Project Structure at a Glance
+## 📂 Project Directory Structure
 
 ```text
 luxcar-intelligence-360/
-├── run_project.bat            # 1-Click launcher for Windows
-├── README.md                  # Project documentation
+├── run_project.bat              # 1-Click launcher for Windows
+├── README.md                    # Project documentation & overview
+├── LICENSE                      # MIT Open-Source License
 │
-├── backend/                   # Python FastAPI Backend
-│   ├── main.py                # Server entry point
-│   ├── data/vehicles.csv      # 40+ vehicle specs, prices, and ratings
-│   ├── engine/                # Core logic (Cost calculator, smart match, AI)
-│   └── routes/                # API endpoints
+├── backend/                     # Python FastAPI Backend
+│   ├── main.py                  # API router & CORS configuration
+│   ├── requirements.txt         # Python dependencies
+│   ├── data/
+│   │   ├── vehicles.csv         # 40+ authentic vehicle specifications
+│   │   └── loader.py            # Vehicle data repository
+│   ├── engine/
+│   │   ├── scoring.py           # Multi-criteria suitability scoring engine
+│   │   ├── tco.py               # 5-Year Total Cost of Ownership simulator
+│   │   ├── ai_advisor.py        # Natural language car recommendation engine
+│   │   └── clustering.py        # Machine learning vehicle clustering
+│   └── routes/                  # API endpoints (/simulate, /vehicles, /ai)
 │
-└── frontend/                  # Next.js TypeScript UI
-    ├── app/                   # Main page & layout
-    ├── components/            # UI components (Sliders, Cards, Cost Charts, AI Chat)
-    └── public/                # Vehicle photos, videos & icons
+└── frontend/                    # Next.js 16 Web Application
+    ├── app/                     # Next.js App Router (page.tsx, layout.tsx)
+    ├── components/              # Interactive UI components
+    │   ├── MatchShowcase.tsx    # #1 Winner car & alternative cards
+    │   ├── TCOChart.tsx         # 5-Year True Cost timeline breakdown
+    │   ├── DecisionCard.tsx     # Strategic buy/wait recommendation
+    │   ├── AIChatDrawer.tsx     # Multilingual AI automotive assistant
+    │   └── HighwayRushGame.tsx  # Arcade mini-game
+    └── lib/
+        ├── vehiclesData.json    # Verified 40-vehicle specifications
+        ├── clientSimulation.ts  # 0ms standalone client-side match engine
+        └── clientAiAdvisor.ts   # Instant client-side AI chat consultant
 ```
 
 ---
 
-## 🌟 Why This Project is Special
+## 🌟 Why This Project Stands Out
 
-* **Practical & Real-World:** Solves real car-buying dilemmas instead of just being another dummy listing site.
-* **Full-Stack Power:** Modern React/Next.js frontend connected seamlessly to a Python FastAPI backend.
-* **Zero Dummy Data:** Real specifications, real market depreciation trends, and authentic photos for all 40+ vehicles.
-* **Intuitive UI:** Clean luxury glassmorphism design with responsive sliders, sound effects, and interactive charts.
+1. **Addresses Real-World Financial Pain Points:** Helps buyers avoid buyer's remorse by forecasting 5-year running expenses before making a purchase.
+2. **True Full-Stack Architecture:** Modern Next.js frontend with clean TypeScript code paired with Python FastAPI backend arithmetic and ML.
+3. **Resilient Zero-Downtime Design:** Includes a 0ms client-side fallback engine so the web application remains 100% functional and crash-free anywhere in the world.
+4. **Authentic Vehicle Data:** Realistic specifications, genuine exterior photos, and Sri Lankan market price calibrations.
 
 ---
 
