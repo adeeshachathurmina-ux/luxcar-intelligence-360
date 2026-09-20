@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { TrendingUpIcon, GaugeIcon, RefreshCwIcon } from "./Icons";
+import { SparklesIcon } from "./Icons";
 import { resolveVehicleImage } from "./VehicleImageResolver";
+import { API_BASE_URL } from "@/lib/api";
 
 interface EvolutionVehicle {
   id: string;
@@ -45,7 +46,7 @@ export function EvolutionTracker() {
       setLoading(true);
       const [brand, model] = selectedModel.split(":");
       try {
-        const res = await fetch(`http://127.0.0.1:8000/api/vehicles/evolution/${encodeURIComponent(brand)}/${encodeURIComponent(model)}`);
+        const res = await fetch(`${API_BASE_URL}/api/vehicles/evolution/${encodeURIComponent(brand)}/${encodeURIComponent(model)}`);
         if (res.ok) {
           const data = await res.json();
           setGenerations(data);

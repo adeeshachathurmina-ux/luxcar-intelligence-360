@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { XIcon, CarIcon, SparklesIcon } from "./Icons";
 import { resolveVehicleImage } from "./VehicleImageResolver";
+import { API_BASE_URL } from "@/lib/api";
 
 interface AddVehicleModalProps {
   isOpen: boolean;
@@ -39,7 +40,7 @@ export function AddVehicleModal({
 
     setIsFetchingPhoto(true);
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/vehicles/auto-photo", {
+      const res = await fetch(`${API_BASE_URL}/api/vehicles/auto-photo`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -99,7 +100,7 @@ export function AddVehicleModal({
     };
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/vehicles", {
+      const res = await fetch(`${API_BASE_URL}/api/vehicles`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newVehicleData),

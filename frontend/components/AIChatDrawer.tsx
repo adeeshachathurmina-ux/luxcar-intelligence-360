@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { SparklesIcon, SendIcon, XIcon } from "./Icons";
+import { API_BASE_URL } from "@/lib/api";
 
 interface Vehicle {
   id: string;
@@ -49,7 +50,7 @@ export function AIChatDrawer({ isOpen, onClose, currentVehicle }: AIChatDrawerPr
   const handleSaveKey = async () => {
     if (!apiKey.trim()) return;
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/ai/set-key", {
+      const res = await fetch(`${API_BASE_URL}/api/ai/set-key`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ api_key: apiKey.trim() }),
@@ -75,7 +76,7 @@ export function AIChatDrawer({ isOpen, onClose, currentVehicle }: AIChatDrawerPr
     setLoading(true);
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/ai/chat", {
+      const res = await fetch(`${API_BASE_URL}/api/ai/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

@@ -13,6 +13,7 @@ import { CurrencyCode } from "@/components/CurrencySwitcher";
 import { SparklesIcon } from "@/components/Icons";
 import { AddVehicleModal } from "@/components/AddVehicleModal";
 import { HighwayRushGame } from "@/components/HighwayRushGame";
+import { API_BASE_URL } from "@/lib/api";
 
 export default function HomePage() {
   const [currency, setCurrency] = useState<CurrencyCode>("LKR");
@@ -122,7 +123,7 @@ export default function HomePage() {
   const fetchAdvice = async (result: any) => {
     setLoadingAdvice(true);
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/ai/advice", {
+      const res = await fetch(`${API_BASE_URL}/api/ai/advice`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ simulation_result: result }),
@@ -144,7 +145,7 @@ export default function HomePage() {
       const p = overrideParams || params;
       setLoadingSim(true);
       try {
-        const res = await fetch("http://127.0.0.1:8000/api/simulate", {
+        const res = await fetch(`${API_BASE_URL}/api/simulate`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -193,7 +194,7 @@ export default function HomePage() {
   const handleAutoFillPrompt = async (promptText: string) => {
     setParsingPrompt(true);
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/ai/parse-profile", {
+      const res = await fetch(`${API_BASE_URL}/api/ai/parse-profile`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text: promptText }),

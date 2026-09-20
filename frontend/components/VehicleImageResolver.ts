@@ -253,7 +253,8 @@ export function resolveVehicleImage(vehicle?: {
 
   // 5. If image_url is Wikimedia, route via backend proxy to prevent 403 blocks
   if (vehicle.image_url && vehicle.image_url.includes("wikimedia.org")) {
-    return `http://127.0.0.1:8000/api/vehicles/image-proxy?url=${encodeURIComponent(vehicle.image_url)}`;
+    const apiBase = (typeof process !== "undefined" && process.env?.NEXT_PUBLIC_API_URL) ? process.env.NEXT_PUBLIC_API_URL.replace(/\/$/, "") : "http://127.0.0.1:8000";
+    return `${apiBase}/api/vehicles/image-proxy?url=${encodeURIComponent(vehicle.image_url)}`;
   }
 
   // 6. Intelligent brand + body-type fallback

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { SparklesIcon, BarChart3Icon, CpuIcon, LayersIcon, InfoIcon } from "./Icons";
 import { formatCurrency, CurrencyCode } from "./CurrencySwitcher";
+import { API_BASE_URL } from "@/lib/api";
 
 interface ClusterPoint {
   id: string;
@@ -70,7 +71,7 @@ export function DataScienceExplorer({ currency, highlightVehicleId }: DataScienc
   useEffect(() => {
     async function fetchClusters() {
       try {
-        const res = await fetch("http://127.0.0.1:8000/api/simulate/clusters");
+        const res = await fetch(`${API_BASE_URL}/api/simulate/clusters`);
         if (res.ok) {
           const data = await res.json();
           setClusterData(data);
