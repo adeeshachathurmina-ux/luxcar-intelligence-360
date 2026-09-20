@@ -90,13 +90,13 @@ export function MatchShowcase({
   if (!bestNow || !bestNow.vehicle) return null;
 
   const winner = bestNow.vehicle;
-  const winnerScore = bestNow.current_score.overall_match;
+  const winnerScore = bestNow.current_score?.overall_match ?? 90;
   const isLkr = currency === "LKR";
   const winnerPrice = isLkr
     ? winner.base_price_lkr || winner.base_price_usd * 305
     : winner.base_price_usd;
 
-  const winnerReasons = bestNow.current_score.reasons || [
+  const winnerReasons = bestNow.current_score?.reasons || [
     `Fits your budget comfortably with low cost per km.`,
     `${winner.seating_capacity} seats perfectly accommodate your passengers.`,
     `Great fuel economy for daily Sri Lankan traffic.`,
@@ -451,7 +451,7 @@ export function MatchShowcase({
               <SpecRow
                 label="Overall Match Score"
                 val1={`${winnerScore}%`}
-                val2={`${compareTarget.current_score.overall_match}%`}
+                val2={`${compareTarget.current_score?.overall_match ?? 85}%`}
                 winner="val1"
               />
               <SpecRow
