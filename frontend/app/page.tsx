@@ -14,6 +14,7 @@ import { SparklesIcon } from "@/components/Icons";
 import { AddVehicleModal } from "@/components/AddVehicleModal";
 import { HighwayRushGame } from "@/components/HighwayRushGame";
 import { API_BASE_URL } from "@/lib/api";
+import { runClientSimulation } from "@/lib/clientSimulation";
 
 export default function HomePage() {
   const [currency, setCurrency] = useState<CurrencyCode>("LKR");
@@ -139,48 +140,55 @@ export default function HomePage() {
     }
   };
 
-  // Main simulation call to backend
+  // Main simulation call to backend with bulletproof instant client fallback
   const runSimulation = useCallback(
     async (overrideParams?: SimpleParams) => {
       const p = overrideParams || params;
       setLoadingSim(true);
+      const payload = {
+        current: {
+          budget: p.budget,
+          daily_km: p.daily_km,
+          family_size: p.family_size,
+          priority_pref: 0.5,
+          preferred_body_type: p.preferred_body_type,
+          fuel_pref: p.fuel_pref,
+          holding_years: 5,
+          down_payment_pct: 0.20,
+          loan_interest_apr: 0.125,
+          loan_term_months: 60,
+        },
+        future: {
+          planning_years: 3,
+          family_size: p.future_family_size,
+          daily_km: p.future_daily_km,
+          preferred_body_type: "SUV",
+          expected_usage: "Family and Travel",
+        },
+      };
+
       try {
         const res = await fetch(`${API_BASE_URL}/api/simulate`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            current: {
-              budget: p.budget,
-              daily_km: p.daily_km,
-              family_size: p.family_size,
-              priority_pref: 0.5,
-              preferred_body_type: p.preferred_body_type,
-              fuel_pref: p.fuel_pref,
-              holding_years: 5,
-              down_payment_pct: 0.20,
-              loan_interest_apr: 0.125,
-              loan_term_months: 60,
-            },
-            future: {
-              planning_years: 3,
-              family_size: p.future_family_size,
-              daily_km: p.future_daily_km,
-              preferred_body_type: "SUV",
-              expected_usage: "Family and Travel",
-            },
-          }),
+          body: JSON.stringify(payload),
         });
 
         if (res.ok) {
           const data = await res.json();
           setSimResult(data);
           fetchAdvice(data);
+          setLoadingSim(false);
+          return;
         }
       } catch (err) {
-        console.error("Simulation failed:", err);
-      } finally {
-        setLoadingSim(false);
+        console.warn("Backend API cold or unreachable, activating instant client-side simulation engine:", err);
       }
+
+      // 0ms Instant Client-Side Simulation Engine (Guarantees Vercel site always works)
+      const clientData = runClientSimulation(payload);
+      setSimResult(clientData);
+      setLoadingSim(false);
     },
     [params]
   );
